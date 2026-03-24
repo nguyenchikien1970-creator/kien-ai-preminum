@@ -95,7 +95,7 @@ function addMessage(role, text) {
         <div class="w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center border ${role === 'bot' ? 'bg-primary/20 border-primary/20 shadow-inner' : 'bg-white border-white'}">
             <span class="material-symbols-outlined ${role === 'bot' ? 'text-primary' : 'text-surface'} text-xl">${role === 'bot' ? 'bolt' : 'person'}</span>
         </div>
-        <div class="max-w-[80%] p-5 rounded-[1.5rem] ${role === 'bot' ? 'bg-white/5 border border-white/10' : 'bg-primary text-surface font-bold'} text-sm leading-relaxed shadow-2xl backdrop-blur-md">
+        <div class="max-w-[80%] p-5 rounded-[1.5rem] ${role === 'bot' ? 'bg-white/5 border border-white/10 text-white' : 'bg-primary text-surface font-bold'} text-sm leading-relaxed shadow-2xl backdrop-blur-md">
             ${text}
         </div>
     `;
