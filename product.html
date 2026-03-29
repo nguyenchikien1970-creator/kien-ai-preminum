@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Phở Bò Tái - Hương Vị Việt Nam</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-container": "#ffa286",
+                        "secondary-fixed-dim": "#f6be39",
+                        "inverse-on-surface": "#f7f0e8",
+                        "surface-variant": "#e8e1da",
+                        "surface-tint": "#a73914",
+                        "outline": "#8b716a",
+                        "background": "#fff8f1",
+                        "tertiary": "#063c0e",
+                        "on-secondary-container": "#715300",
+                        "surface-container-high": "#eee7df",
+                        "on-tertiary-fixed": "#002204",
+                        "on-background": "#1e1b17",
+                        "surface-container-low": "#f9f3eb",
+                        "surface-dim": "#dfd9d1",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#ffdfa0",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#33302b",
+                        "on-secondary-fixed": "#261a00",
+                        "tertiary-fixed": "#b8f1b0",
+                        "surface-container-highest": "#e8e1da",
+                        "secondary": "#795900",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#8b2500",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f4ede5",
+                        "on-surface": "#1e1b17",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#ffb59f",
+                        "tertiary-container": "#225423",
+                        "primary-fixed-dim": "#ffb59f",
+                        "outline-variant": "#dfc0b7",
+                        "on-surface-variant": "#58423b",
+                        "secondary-container": "#ffc641",
+                        "primary": "#641800",
+                        "on-secondary-fixed-variant": "#5c4300",
+                        "on-primary-fixed-variant": "#852300",
+                        "tertiary-fixed-dim": "#9dd496",
+                        "surface": "#fff8f1",
+                        "primary-fixed": "#ffdbd1",
+                        "on-tertiary-fixed-variant": "#1f5121",
+                        "on-tertiary-container": "#90c78a",
+                        "on-primary-fixed": "#3a0a00",
+                        "surface-bright": "#fff8f1"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(255, 248, 241, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .heritage-divider {
+            height: 40px;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L24.5 15.5H40L27.5 25L32 40L20 30.5L8 40L12.5 25L0 15.5H15.5L20 0Z' fill='%23e8e1da'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-sm">
+<div class="flex justify-between items-center w-full px-6 md:px-12 py-4">
+<div class="font-serif italic text-2xl text-orange-900 dark:text-orange-50 font-headline">Phở Bò Tái</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-stone-600 font-medium hover:text-orange-800 font-label uppercase tracking-widest text-xs" href="#">Menu</a>
+<a class="text-orange-900 font-bold border-b-2 border-orange-900 pb-1 font-label uppercase tracking-widest text-xs" href="#">Heritage</a>
+<a class="text-stone-600 font-medium hover:text-orange-800 font-label uppercase tracking-widest text-xs" href="#">Markets</a>
+<a class="text-stone-600 font-medium hover:text-orange-800 font-label uppercase tracking-widest text-xs" href="#">Stories</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-primary">shopping_bag</button>
+<button class="material-symbols-outlined text-primary">person</button>
+</div>
+</div>
+</nav>
+<main class="pt-28 max-w-7xl mx-auto px-6 md:px-12">
+<!-- Breadcrumb -->
+<nav class="mb-10">
+<ol class="flex text-xs font-label uppercase tracking-wider text-on-surface-variant space-x-2">
+<li><a class="hover:text-primary transition-colors" href="index.html">Trang Chủ</a></li>
+<li><span class="px-2">/</span></li>
+<li><a class="hover:text-primary transition-colors" href="menu.html">Thực Đơn</a></li>
+<li><span class="px-2">/</span></li>
+<li class="text-primary font-bold">Phở Bò Tái</li>
+</ol>
+</nav>
+<!-- Product Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
+<!-- Left: Gallery (60%) -->
+<div class="lg:col-span-7 space-y-6">
+<div class="relative rounded-2xl overflow-hidden bg-surface-container-low aspect-[4/3]">
+<img alt="Phở Bò Tái Hero" class="w-full h-full object-cover" data-alt="Authentic Vietnamese beef pho with thinly sliced rare beef, fresh green onions, herbs and translucent noodles in clear broth, top-down view cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlm5mcuuq7g2la23xuOCUwGVKdea4MUmglI38uWVsgAGKX4h3l12HJNH7Gg2Xhxd_yN3sMkcjkMPHWiQgRs-wofJ5BmpS8CFBNeu5ODeAJhX9L259XdcBNtIEOP74sNakclFxwKV2RryJGJgb1WUZnf9jbp3rK7qUDbPE9VwWCm_DrZdfKdikSeuV8kQ-bTYRiP70TCUGo-65EOsuqf6XUv0q5i5pmsEpXPrV6JwgqHiYLpe8GQJed_b5pkqCXH_vWS3UEkuMypt0"/>
+<div class="absolute top-4 left-4 bg-tertiary text-on-tertiary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                        Tươi Sống
+                    </div>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<button class="rounded-xl overflow-hidden ring-2 ring-primary bg-surface-container aspect-square">
+<img class="w-full h-full object-cover" data-alt="Close up of rare beef slices and fresh basil leaves in a bowl of hot Vietnamese beef pho" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAILy6FVYylHoYddz9Z5I-1vdM8BGM4BMq1E2L1RNLTVYJD58jK4k5t3Nj3JonZmafxZ8pcrwXdMY2udxuyKUb-ZS-D3EGLuUYbIYDs2OifcpXzc8XBra3zCrZedeb0NdLECX0RQC6S86G9xDzOf3mCKizipzoP2_msz-Ev21zWdNEQLjgs_A2GOtOWMWT7k7kN94QClSRtm4fOQTiKT2TIgxgbLXthDSi1zGBg74jfj3boyIF43qhkjGSsf98a9-2hOfPNJL9ST7Q"/>
+</button>
+<button class="rounded-xl overflow-hidden bg-surface-container aspect-square hover:ring-2 hover:ring-outline-variant transition-all">
+<img class="w-full h-full object-cover" data-alt="Side view of a steam bowl of pho with crispy bean sprouts and lime wedges on a wooden tray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANVlQOKwoKjbmF-W7hSvYXlKEi9AZkPzDH-wcUGH7OU_OfoQeL7C3pv_IvXg0A-68St0-4bqyPokaLDRtPeNRUjLIZGqyj8xqTP7BRLzqyuEUM8xHNVGlkKd1EXdPTVBjLQIhhmdAuaI3BRAh_AKxTZ_D1ToZSLjS0w7iF651R2ZMUXOfb5OA1ZqrSDC9nOq3LzoBJ93gHkXo7InEbwgpAawQYSJqOVPR7lYeI3Yo2Hv0cSgTJxslmmXm7ndXDd_JDydExU9jHqCw"/>
+</button>
+<button class="rounded-xl overflow-hidden bg-surface-container aspect-square hover:ring-2 hover:ring-outline-variant transition-all">
+<img class="w-full h-full object-cover" data-alt="Traditional Vietnamese table setting with chopsticks and various pho condiments in ceramic bowls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmhT8NF9M6zGZOzCpXpP1k5y06i2E7sVWtXvtJlay5kL3ON2Nu_Tz4ErHuh9r3dNxyossS2ZmfsyHI-Z4KNyPVzQUcJdfIoiQOPgi1N_1fwMDnBKBmGO3hB-RhV33GNq8s6NtGA5SMQXVt_kz9-0QRE2deQubYX02KKKKE1BoteJvL8KmTqKW8MXGluSeQMt6KWc6JWOu-Me35EbE_tx4H5Vcu5-Rm0pjhTyp-YewweJx2nk_pF10t_8ZYs3g_7YGrIfXICkogG2o"/>
+</button>
+<button class="rounded-xl overflow-hidden bg-surface-container aspect-square hover:ring-2 hover:ring-outline-variant transition-all">
+<img class="w-full h-full object-cover" data-alt="Pouring clear hot beef broth over fresh rice noodles and rare beef slices in a decorative ceramic bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm9OLo9dl99-J68bEHMyIF7pAu3Ed_3juu3m9j2SgTCj-T6I_RFItR3l6QffcUGaPlm4i9SxJ7We_ZGSRlfUgCwXltxpV5HCffU6CHk8F9Lu8O1AdsT21XIBOmzbI9UH3F_Bf8oMgdIH7xSWf_FLA_KSk8omuhjeag0oVaKyD4bcvvyz-ZmwTAjte_BTcG4DYHi_k20vLaOToHUwuDmHZlY32tSo-UuNYunXLzEDJ9IEntnUsevOSr-uNk44U4bLxNAv3jYizGEFk"/>
+</button>
+</div>
+</div>
+<!-- Right: Details (40%) -->
+<div class="lg:col-span-5 flex flex-col">
+<div class="mb-2">
+<span class="text-xs font-bold font-label text-tertiary tracking-widest uppercase bg-tertiary-fixed px-3 py-1 rounded-full">PHỞ &amp; BÚN</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-3 tracking-tight">Phở Bò Tái</h1>
+<div class="flex items-center space-x-4 mb-6">
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold ml-1">4.8</span>
+</div>
+<span class="text-on-surface-variant text-sm font-label">(245 đánh giá)</span>
+</div>
+<div class="flex items-baseline space-x-3 mb-8">
+<span class="text-3xl font-bold text-secondary font-headline">89.000đ</span>
+<span class="text-lg text-on-surface-variant line-through">109.000đ</span>
+<span class="text-sm font-bold text-error uppercase">-18%</span>
+</div>
+<p class="text-on-surface-variant leading-relaxed mb-8 font-body">
+                    Phở bò truyền thống với nước dùng ninh xương 12 tiếng, thịt bò tái mềm, bánh phở tươi, hành lá, ngò gai, húng quế. Phục vụ kèm giá đỗ, chanh, ớt tươi.
+                </p>
+<!-- Options -->
+<div class="space-y-8 mb-10">
+<!-- Size -->
+<div>
+<label class="block text-xs font-bold font-label uppercase tracking-widest text-on-surface mb-3">Kích Cỡ</label>
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-2 rounded-full border border-outline-variant text-sm font-medium hover:border-primary transition-all">Nhỏ</button>
+<button class="px-6 py-2 rounded-full border-2 border-primary bg-primary-fixed text-primary text-sm font-bold">Vừa</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-sm font-medium hover:border-primary transition-all">Lớn (+15k)</button>
+</div>
+</div>
+<!-- Spice -->
+<div>
+<label class="block text-xs font-bold font-label uppercase tracking-widest text-on-surface mb-3">Mức Độ Cay</label>
+<div class="flex flex-wrap gap-3">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-sm">Không cay</button>
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-sm">Ít cay</button>
+<button class="px-4 py-2 rounded-lg bg-primary-container text-on-primary-container text-sm font-bold">Cay vừa</button>
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-sm">Cay nhiều</button>
+</div>
+</div>
+<!-- Add-ons -->
+<div>
+<label class="block text-xs font-bold font-label uppercase tracking-widest text-on-surface mb-3">Thêm Topping</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="flex items-center space-x-3 cursor-pointer p-3 rounded-xl border border-outline-variant/20 hover:bg-surface-container-low transition-colors">
+<input class="w-5 h-5 rounded text-tertiary focus:ring-tertiary border-outline-variant" type="checkbox"/>
+<span class="text-sm">Thêm thịt bò <span class="text-secondary font-bold">+25k</span></span>
+</label>
+<label class="flex items-center space-x-3 cursor-pointer p-3 rounded-xl border border-outline-variant/20 hover:bg-surface-container-low transition-colors">
+<input class="w-5 h-5 rounded text-tertiary focus:ring-tertiary border-outline-variant" type="checkbox"/>
+<span class="text-sm">Thêm gân bò <span class="text-secondary font-bold">+20k</span></span>
+</label>
+<label class="flex items-center space-x-3 cursor-pointer p-3 rounded-xl border border-outline-variant/20 hover:bg-surface-container-low transition-colors">
+<input class="w-5 h-5 rounded text-tertiary focus:ring-tertiary border-outline-variant" type="checkbox"/>
+<span class="text-sm">Thêm trứng <span class="text-secondary font-bold">+10k</span></span>
+</label>
+<label class="flex items-center space-x-3 cursor-pointer p-3 rounded-xl border border-outline-variant/20 hover:bg-surface-container-low transition-colors">
+<input class="w-5 h-5 rounded text-tertiary focus:ring-tertiary border-outline-variant" type="checkbox"/>
+<span class="text-sm">Thêm bánh phở <span class="text-secondary font-bold">+15k</span></span>
+</label>
+</div>
+</div>
+</div>
+<!-- Action Section -->
+<div class="mt-auto space-y-4">
+<div class="flex items-center space-x-4 mb-6">
+<div class="flex items-center bg-surface-container-highest rounded-full px-4 py-2">
+<button class="material-symbols-outlined text-primary text-lg">remove</button>
+<span class="mx-6 font-bold">1</span>
+<button class="material-symbols-outlined text-primary text-lg">add</button>
+</div>
+<button class="flex-1 bg-gradient-to-r from-primary to-primary-container text-on-primary py-4 rounded-full font-bold uppercase tracking-widest text-sm shadow-md transition-transform active:scale-95">
+                            THÊM VÀO GIỎ HÀNG
+                        </button>
+</div>
+<div class="flex space-x-4">
+<button class="flex-1 py-4 border-2 border-outline-variant rounded-full font-bold uppercase tracking-widest text-sm hover:bg-surface-container-low transition-all">Mua Ngay</button>
+<button class="p-4 border border-outline-variant rounded-full text-primary hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="p-4 border border-outline-variant rounded-full text-primary hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Heritage Divider -->
+<div class="py-24 heritage-divider"></div>
+<!-- Details Tabs -->
+<div class="mb-24">
+<div class="flex border-b border-outline-variant/30 mb-10 overflow-x-auto">
+<button class="px-8 py-4 border-b-2 border-primary text-primary font-bold font-label uppercase tracking-widest text-sm whitespace-nowrap">Mô Tả Chi Tiết</button>
+<button class="px-8 py-4 text-on-surface-variant font-medium font-label uppercase tracking-widest text-sm whitespace-nowrap hover:text-primary transition-colors">Thông Tin Dinh Dưỡng</button>
+<button class="px-8 py-4 text-on-surface-variant font-medium font-label uppercase tracking-widest text-sm whitespace-nowrap hover:text-primary transition-colors">Đánh Giá (245)</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<div>
+<h3 class="text-2xl font-headline font-bold mb-6">Bí Quyết Cổ Truyền</h3>
+<p class="text-on-surface-variant mb-6 leading-relaxed">Món Phở Bò Tái tại Hương Vị Việt Nam được chế biến theo công thức gia truyền từ vùng Nam Định. Nước dùng là linh hồn của món ăn, được ninh hoàn toàn từ xương ống bò cùng 12 loại thảo mộc quý hiếm như đại hồi, đinh hương, quế thanh, thảo quả... trong suốt 12 tiếng đồng hồ để đạt được độ trong và ngọt thanh tự nhiên.</p>
+<ul class="space-y-3">
+<li class="flex items-center text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary mr-3 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Thịt bò tươi nhập khẩu trực tiếp trong ngày
+                        </li>
+<li class="flex items-center text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary mr-3 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Bánh phở tươi không hàn khảo, làm mới mỗi sáng
+                        </li>
+<li class="flex items-center text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary mr-3 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Rau thơm canh tác hữu cơ tại vườn riêng
+                        </li>
+</ul>
+</div>
+<div class="bg-surface-container rounded-2xl p-8">
+<img alt="Ingredients" class="w-full h-48 object-cover rounded-xl mb-6 shadow-sm" data-alt="Artistic moody shot of various spices like star anise, cinnamon sticks, and cloves on a dark stone surface with warm ambient light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6ocnws4lt1nq_s6nafjHERe-JeQBaqKmwMDsctEOdWw2Qr90rrb83_lJwPgZgHOfO9GE3ZjgLogNb4vTVu0xTkoKipD-KUkEFNHC4xIEnkiecNHLP6Mwr0c5IyzSeUaKWYexJ1vw4eMvp69gXsblB5eycmT2a3yK5kaUotjfqbU9uQ1J4Fru3L9Mpz21QZu9lVKzTj4WJN00CO5ZvcnDzrxmY4Je2bfgTYHkFBSrEmexxfeu7XF2O5iGGjeIGIJq7-OX9Wk0WgPw"/>
+<h4 class="font-bold mb-4 font-headline">Thành phần chính:</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed italic">"Xương bò, Thịt thăn bò, Bánh phở, Hành tây, Hành lá, Gừng nướng, Hành tím nướng, Quế, Hồi, Thảo quả, Đinh hương, Muối biển, Đường phèn."</p>
+</div>
+</div>
+</div>
+<!-- Reviews Section -->
+<div class="mb-24">
+<h2 class="text-3xl font-headline font-bold mb-12">Khách Hàng Nói Gì?</h2>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-4 bg-surface-container-low p-8 rounded-2xl h-fit">
+<div class="text-center mb-8">
+<div class="text-6xl font-headline font-bold text-primary mb-2">4.8</div>
+<div class="flex justify-center text-secondary mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<div class="text-sm text-on-surface-variant">Dựa trên 245 đánh giá thực tế</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center text-sm">
+<span class="w-4">5</span>
+<span class="material-symbols-outlined text-xs text-secondary ml-1 mr-4">star</span>
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[85%]"></div>
+</div>
+<span class="ml-4 w-10 text-right text-on-surface-variant">85%</span>
+</div>
+<div class="flex items-center text-sm">
+<span class="w-4">4</span>
+<span class="material-symbols-outlined text-xs text-secondary ml-1 mr-4">star</span>
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[10%]"></div>
+</div>
+<span class="ml-4 w-10 text-right text-on-surface-variant">10%</span>
+</div>
+<div class="flex items-center text-sm text-on-surface-variant/50">
+<span class="w-4">3</span>
+<span class="material-symbols-outlined text-xs ml-1 mr-4">star</span>
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[5%]"></div>
+</div>
+<span class="ml-4 w-10 text-right">5%</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8 space-y-8">
+<!-- Review Item 1 -->
+<div class="border-b border-outline-variant/20 pb-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-lg">Nguyễn Minh Hoàng</h4>
+<div class="flex text-secondary text-sm mt-1">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<span class="text-xs text-on-surface-variant font-label uppercase">12/05/2024</span>
+</div>
+<p class="text-on-surface-variant italic">"Nước dùng quá tuyệt vời, trong và thơm mùi hồi quế đặc trưng. Thịt bò tái mềm, bánh phở tươi. Chắc chắn sẽ quay lại!"</p>
+</div>
+<!-- Review Item 2 -->
+<div class="border-b border-outline-variant/20 pb-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-lg">Phạm Thị Lan Anh</h4>
+<div class="flex text-secondary text-sm mt-1">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<span class="text-xs text-on-surface-variant font-label uppercase">08/05/2024</span>
+</div>
+<p class="text-on-surface-variant italic">"Quán trang trí đẹp, phở vị thanh tao không bị quá nhiều mì chính. Phục vụ nhanh và nhiệt tình."</p>
+</div>
+<!-- Review Item 3 -->
+<div class="border-b border-outline-variant/20 pb-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-lg">Trần Văn Tú</h4>
+<div class="flex text-secondary text-sm mt-1">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs">star</span>
+</div>
+</div>
+<span class="text-xs text-on-surface-variant font-label uppercase">01/05/2024</span>
+</div>
+<p class="text-on-surface-variant italic">"Thịt bò tươi ngon, nước dùng đậm đà. Có thêm quẩy giòn ăn kèm rất hợp. 5 sao cho chất lượng."</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Related Products -->
+<div class="mb-32">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="text-xs font-bold font-label text-primary tracking-widest uppercase mb-2 block">Gợi Ý Cho Bạn</span>
+<h2 class="text-4xl font-headline font-bold">Món Ăn Liên Quan</h2>
+</div>
+<a class="text-sm font-bold text-primary font-label uppercase tracking-widest border-b-2 border-primary pb-1" href="#">Xem tất cả</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Product Card 1 -->
+<div class="group">
+<div class="relative rounded-2xl overflow-hidden mb-4 aspect-square bg-surface-container-low transition-transform duration-500 group-hover:-translate-y-2 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Vibrant bowl of Bun Bo Hue spicy beef noodle soup with deep red broth, thick rice noodles, and hearty meat chunks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBgyL3xvq5uGNVuurX2IOLE_MpD6A_8EalQrArAwGF7hwAgks7U__YgmJp2b6QutYJ4hqmJDjdt4YlnSxg3VvZRt1onWp6mnwi-RCz7mj253eJTdijjAZRJ2t7_n12BPpxaCimeYC9HweLWgNSIcHLizP_ViqBnJ17LCp3rbs3MPNNGCoB-vO7rhgfTduCs773CrLJAYXJ4zZrpcIZ7gSW1Ox6UkSI8RK5n51oFIKN8IAu8fmhZRhTZRNvG7mNWxf8-TUr2jqbBH0"/>
+<button class="absolute top-4 right-4 p-2 bg-surface/80 backdrop-blur-md rounded-full text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<h3 class="font-headline font-bold text-lg mb-1 group-hover:text-primary transition-colors">Bún Bò Huế</h3>
+<div class="flex justify-between items-center">
+<span class="text-secondary font-bold">95.000đ</span>
+<div class="flex items-center text-xs text-secondary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-1 font-bold">4.9</span>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group">
+<div class="relative rounded-2xl overflow-hidden mb-4 aspect-square bg-surface-container-low transition-transform duration-500 group-hover:-translate-y-2 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Traditional Vietnamese chicken pho with shredded chicken, clear savory broth and fresh green herbs in a white bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrst9A5ajKsDU_2qgWR-efPz5xL9GjCNL99_RD_ti9whFuXrEgkmaurRFcTfGPMTTmfobu91R1LEUTd7UZ_m78IsIstFXD8qk6bMSXyjJMHPN4jYIRQuPZ8rPl7AAjpdkB4kpbj1UnnVmvNEHc1vZ-pK1k9iwUbeF3iyYjZ5nm4yNbxNoKI62hZUO-JgjkjOPYv9-gPLuBFw4gFUm7TqgnKxCLbZFf_mm5viNWaWQ6vD31g-z91VNbY-wjoS7kLUBDqn5pVXsd-6M"/>
+<button class="absolute top-4 right-4 p-2 bg-surface/80 backdrop-blur-md rounded-full text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<h3 class="font-headline font-bold text-lg mb-1 group-hover:text-primary transition-colors">Phở Gà</h3>
+<div class="flex justify-between items-center">
+<span class="text-secondary font-bold">79.000đ</span>
+<div class="flex items-center text-xs text-secondary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-1 font-bold">4.7</span>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group">
+<div class="relative rounded-2xl overflow-hidden mb-4 aspect-square bg-surface-container-low transition-transform duration-500 group-hover:-translate-y-2 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Bowl of Bun Rieu tomato based crab noodle soup with fried tofu, meat patties and fresh herbs on the side" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvYY1llImhNGiCcpR4MQfibcIRzUxBVAODtaEAyBkk0hKLypuCPbIiCTOJ1wDV269nbvTTmlbbpy-RJIv-IysXWFtK_wpu_t_94N609hBXOobLTyR9MsJVqthY7zjcut4kSw8I5D9cc9Oh9S5TQa7QLtiBHs0ecr-Ve9ag3eK-d6r1Yb83TNg7jKxwQYgfVJnd9CpAZQOWzhBkYsZY8EAZG2CdmBUciRgNXRIzLgXex36RPhPl2ac-b-SEG9mKB9k5pj-d9TORkvI"/>
+<button class="absolute top-4 right-4 p-2 bg-surface/80 backdrop-blur-md rounded-full text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<h3 class="font-headline font-bold text-lg mb-1 group-hover:text-primary transition-colors">Bún Riêu</h3>
+<div class="flex justify-between items-center">
+<span class="text-secondary font-bold">85.000đ</span>
+<div class="flex items-center text-xs text-secondary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-1 font-bold">4.8</span>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group">
+<div class="relative rounded-2xl overflow-hidden mb-4 aspect-square bg-surface-container-low transition-transform duration-500 group-hover:-translate-y-2 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Delicious Hu Tieu Nam Vang pork and seafood noodle soup with shrimp, quail eggs and minced meat in a rich broth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM7AXaUhN4YbUUvquQ4lVV1pWGpH0tgdtALhwiXbzodKYvSHzEaj7j-OOn4UYdA9MUrU2iWju2zT2Yoe9QVKWEGoyQVXL6QmXnBGyXNQZ2aYEO64p95FUHFhgbcz3-RPwr4oHLePw8Q5z9tcwmPC0FPypyYImC-bhhRmN-nG7Wjn1E1gkSWPHTbh5w3RZYnRyOGFIqvDD_iNkMp8VaHS5LaS8Q7oPQqMRhXoXN1yVdBFw-keEqDKIU84qaopIHUOllbOPJh8RvB_Y"/>
+<button class="absolute top-4 right-4 p-2 bg-surface/80 backdrop-blur-md rounded-full text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<h3 class="font-headline font-bold text-lg mb-1 group-hover:text-primary transition-colors">Hủ Tiếu Nam Vang</h3>
+<div class="flex justify-between items-center">
+<span class="text-secondary font-bold">90.000đ</span>
+<div class="flex items-center text-xs text-secondary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-1 font-bold">4.6</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 w-full rounded-t-3xl mt-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-16 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-serif text-xl text-orange-900 dark:text-orange-50 font-headline italic mb-6">Hương Vị Việt Nam</div>
+<p class="text-stone-500 text-sm leading-relaxed mb-6">Gìn giữ và lan tỏa tinh hoa ẩm thực Việt qua từng bát phở nóng hổi, đong đầy tâm huyết và di sản tổ tiên.</p>
+<div class="flex space-x-4">
+<a class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-primary" href="#"><span class="material-symbols-outlined text-sm">public</span></a>
+<a class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-primary" href="#"><span class="material-symbols-outlined text-sm">mail</span></a>
+<a class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-primary" href="#"><span class="material-symbols-outlined text-sm">call</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-serif text-lg text-orange-900 dark:text-orange-50 mb-6">Liên Kết</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-500 text-sm hover:text-orange-700 transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-stone-500 text-sm hover:text-orange-700 transition-all" href="#">Shipping &amp; Delivery</a></li>
+<li><a class="text-stone-500 text-sm hover:text-orange-700 transition-all font-bold underline" href="#">Our Story</a></li>
+<li><a class="text-stone-500 text-sm hover:text-orange-700 transition-all" href="#">Culinary Workshops</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-serif text-lg text-orange-900 dark:text-orange-50 mb-6">Khám Phá</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-500 text-sm hover:text-orange-700 transition-all" href="menu.html">Thực Đơn</a></li>
+<li><a class="text-stone-500 text-sm hover:text-orange-700 transition-all" href="#">Đặt Bàn</a></li>
+<li><a class="text-stone-500 text-sm hover:text-orange-700 transition-all" href="#">Blog Ẩm Thực</a></li>
+<li><a class="text-stone-500 text-sm hover:text-orange-700 transition-all" href="#">Nhượng Quyền</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-serif text-lg text-orange-900 dark:text-orange-50 mb-6">Đăng Ký</h4>
+<p class="text-stone-500 text-sm mb-4">Nhận những câu chuyện ẩm thực và ưu đãi đặc quyền.</p>
+<div class="flex">
+<input class="bg-white border-none rounded-l-lg text-sm w-full focus:ring-primary" placeholder="Email của bạn" type="email"/>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-r-lg font-bold text-xs">GỬI</button>
+</div>
+</div>
+</div>
+<div class="text-center py-8 border-t border-stone-200 text-stone-400 text-xs font-label tracking-widest uppercase">
+            © 2024 Hương Vị Việt Nam. Crafted with Heritage.
+        </div>
+</footer>
+</body></html>
