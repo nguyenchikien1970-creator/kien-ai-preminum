@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Về Chúng Tôi - Hương Vị Việt Nam</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary-container": "#ffa286", "secondary-fixed-dim": "#f6be39", "inverse-on-surface": "#f7f0e8", "surface-variant": "#e8e1da", "surface-tint": "#a73914", "outline": "#8b716a", "background": "#fff8f1", "tertiary": "#063c0e", "on-secondary-container": "#715300", "surface-container-high": "#eee7df", "on-tertiary-fixed": "#002204", "on-background": "#1e1b17", "surface-container-low": "#f9f3eb", "surface-dim": "#dfd9d1", "error": "#ba1a1a", "on-error-container": "#93000a", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "secondary-fixed": "#ffdfa0", "on-tertiary": "#ffffff", "inverse-surface": "#33302b", "on-secondary-fixed": "#261a00", "tertiary-fixed": "#b8f1b0", "surface-container-highest": "#e8e1da", "secondary": "#795900", "error-container": "#ffdad6", "primary-container": "#8b2500", "on-primary": "#ffffff", "surface-container": "#f4ede5", "on-surface": "#1e1b17", "on-secondary": "#ffffff", "inverse-primary": "#ffb59f", "tertiary-container": "#225423", "primary-fixed-dim": "#ffb59f", "outline-variant": "#dfc0b7", "on-surface-variant": "#58423b", "secondary-container": "#ffc641", "primary": "#641800", "on-secondary-fixed-variant": "#5c4300", "on-primary-fixed-variant": "#852300", "tertiary-fixed-dim": "#9dd496", "surface": "#fff8f1", "primary-fixed": "#ffdbd1", "on-tertiary-fixed-variant": "#1f5121", "on-tertiary-container": "#90c78a", "on-primary-fixed": "#3a0a00", "surface-bright": "#fff8f1" }, fontFamily: { "headline": ["Noto Serif"], "body": ["Manrope"], "label": ["Manrope"] }, borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.5rem", "full": "9999px"} } } }
+</script>
+<style>
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+body { background-color: #fff8f1; color: #1e1b17; font-family: 'Manrope', sans-serif; }
+h1, h2, h3, .serif { font-family: 'Noto Serif', serif; }
+</style>
+</head>
+<body class="bg-surface selection:bg-primary-fixed selection:text-primary flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav bg-orange-50/80 dark:bg-stone-900/80 shadow-sm dark:shadow-none">
+    <div class="flex justify-between items-center px-8 py-4 w-full max-w-screen-2xl mx-auto">
+        <a class="font-serif italic text-2xl text-orange-900 dark:text-orange-100 tracking-tight" href="index.html">Hương Vị Việt Nam</a>
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="text-stone-500 hover:text-orange-800 font-serif text-lg tracking-tight transition-colors" href="index.html">Trang Chủ</a>
+            <a class="text-stone-500 hover:text-orange-800 font-serif text-lg tracking-tight transition-colors" href="menu.html">Thực Đơn</a>
+            <a class="text-stone-500 hover:text-orange-800 font-serif text-lg tracking-tight transition-colors" href="specials.html">Món Đặc Biệt</a>
+            <a class="text-orange-800 dark:text-orange-400 font-bold border-b-2 border-orange-800 font-serif text-lg tracking-tight" href="about.html">Về Chúng Tôi</a>
+            <a class="text-stone-500 hover:text-orange-800 font-serif text-lg tracking-tight transition-colors" href="contact.html">Liên Hệ</a>
+        </div>
+        <div class="flex items-center gap-6 text-orange-900">
+            <button class="hover:bg-orange-100/50 p-2 rounded-full transition-colors"><span class="material-symbols-outlined">call</span></button>
+            <button class="hover:bg-orange-100/50 p-2 rounded-full transition-colors"><span class="material-symbols-outlined">search</span></button>
+            <a href="cart.html" class="hover:bg-orange-100/50 p-2 rounded-full transition-colors relative block">
+                <span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+                <span class="absolute top-0 right-0 bg-primary text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center">2</span>
+            </a>
+            <button class="hover:bg-orange-100/50 p-2 rounded-full transition-colors"><span class="material-symbols-outlined" data-icon="favorite">favorite</span></button>
+        </div>
+    </div>
+</nav>
+
+<main class="pt-32 pb-24 max-w-screen-2xl mx-auto px-8 flex-grow">
+    <header class="mb-16 text-center max-w-3xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-headline font-bold text-primary tracking-tight mb-6">Câu Chuyện Của Chúng Tôi</h1>
+        <p class="text-on-surface-variant text-lg leading-relaxed">
+            Từ một gian bếp nhỏ gia truyền đến sứ mệnh mang tinh hoa ẩm thực Việt Nam vươn ra thế giới. Chúng tôi tin rằng mỗi món ăn là một câu chuyện thấm đẫm tình yêu thương và văn hóa cội nguồn.
+        </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <!-- Bức ảnh ấn tượng -->
+        <div class="rounded-3xl overflow-hidden shadow-2xl relative">
+            <img src="https://images.unsplash.com/photo-1582299834118-2e008d51fa90?q=80&w=2074&auto=format&fit=crop" alt="Một góc quán sang trọng" class="w-full h-full object-cover">
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                <h3 class="text-white font-serif text-2xl">Tinh Tế &amp; Thanh Lịch</h3>
+            </div>
+        </div>
+
+        <!-- Nội dung văn bản -->
+        <div class="space-y-8">
+            <div class="bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-orange-200/50">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                    <span class="material-symbols-outlined text-primary">restaurant</span>
+                </div>
+                <h3 class="text-2xl font-serif font-bold text-primary mb-3">Triết lý Ẩm Thực</h3>
+                <p class="text-on-surface-variant leading-relaxed">
+                    Ở "Hương Vị Việt Nam", mỗi thìa phở, từng cuốn nem không đơn thuần chỉ là món ăn, mà còn là linh hồn của dân tộc. Chúng tôi giữ gìn và phát huy những kỹ thuật nấu bếp cổ truyền song song cùng những tiêu chuẩn khắt khe nhất của ẩm thực đương đại.
+                </p>
+            </div>
+
+            <div class="bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-orange-200/50">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                    <span class="material-symbols-outlined text-primary">public</span>
+                </div>
+                <h3 class="text-2xl font-serif font-bold text-primary mb-3">Tầm Nhìn &amp; Sứ Mệnh</h3>
+                <p class="text-on-surface-variant leading-relaxed">
+                    Sứ mệnh cốt lõi của chúng tôi là lan tỏa niềm tự hào bản sắc quê hương. Trong tương lai 5 năm tới, Hương Vị Việt Nam hướng tới trở thành hệ thống Fine Dining thuần Việt dẫn đầu trong khu vực Châu Á.
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="w-full mt-auto bg-stone-100 dark:bg-stone-950">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-7xl mx-auto border-t border-orange-200/20">
+        <div class="col-span-1 md:col-span-1">
+            <span class="font-serif text-3xl mb-6 block text-orange-950 dark:text-orange-50 italic">Hương Vị Việt Nam</span>
+            <p class="font-serif text-base font-light text-stone-500 mb-8">Nơi hội tụ tinh hoa ẩm thực truyền thống Việt Nam với phong cách phục vụ hiện đại và chuyên nghiệp.</p>
+        </div>
+        <div>
+            <h4 class="font-headline font-bold text-orange-900 mb-6 uppercase tracking-widest text-sm">Khám Phá</h4>
+            <ul class="space-y-4">
+                <li><a class="text-orange-800 underline font-serif text-base font-light" href="about.html">Về chúng tôi</a></li>
+                <li><a class="text-stone-500 hover:text-orange-800 transition-colors font-serif text-base font-light" href="specials.html">Thực đơn đặc sắc</a></li>
+                <li><a class="text-stone-500 hover:text-orange-800 transition-colors font-serif text-base font-light" href="#">Tin tức ẩm thực</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-headline font-bold text-orange-900 mb-6 uppercase tracking-widest text-sm">Hỗ Trợ</h4>
+            <ul class="space-y-4">
+                <li><a class="text-stone-500 hover:text-orange-800 transition-colors font-serif text-base font-light" href="#">Chính sách bảo mật</a></li>
+                <li><a class="text-stone-500 hover:text-orange-800 transition-colors font-serif text-base font-light" href="#">Điều khoản sử dụng</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-headline font-bold text-orange-900 mb-6 uppercase tracking-widest text-sm">Liên Hệ</h4>
+            <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-orange-800 mt-1">location_on</span>
+                    <span class="text-stone-500 font-serif text-base font-light">123 Đường Lê Lợi, Quận 1, TP.HCM</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- Chatbot UI -->
+<div id="chatbot-container" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <!-- Chat Window -->
+    <div id="chat-window" class="hidden w-80 sm:w-96 bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant overflow-hidden mb-4 flex flex-col transition-all duration-300">
+        <div class="bg-primary text-white p-4 flex justify-between items-center px-5">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+                <span class="font-headline font-bold">Trợ Lý AI Hương Vị Việt</span>
+            </div>
+            <button id="close-chat-btn" class="text-white/80 hover:text-white transition-colors">
+                <span class="material-symbols-outlined" data-icon="close">close</span>
+            </button>
+        </div>
+        <div id="chat-messages" class="h-80 p-5 flex flex-col gap-4 overflow-y-auto bg-surface font-body text-sm relative">
+            <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-white text-sm" data-icon="smart_toy">smart_toy</span>
+                </div>
+                <div class="bg-surface-container p-3 rounded-2xl rounded-tl-sm text-on-surface w-[80%]">
+                    Xin chào! Cùng trò chuyện với trợ lý AI của Hương Vị Việt Nam nhé.
+                </div>
+            </div>
+        </div>
+        <div class="p-4 bg-surface-container-low border-t border-outline-variant flex gap-2 items-center">
+            <input id="chat-input" type="text" class="flex-1 bg-surface-container-highest px-4 py-2.5 rounded-full border border-outline-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-sm font-body text-on-surface placeholder:text-on-surface-variant/50" placeholder="Nhập tin nhắn...">
+            <button id="send-btn" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-container transition-colors shrink-0">
+                <span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+            </button>
+        </div>
+    </div>
+    <button id="chatbot-toggle-btn" class="w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-105 transition-transform duration-300 relative group">
+        <span class="material-symbols-outlined absolute transition-opacity duration-300 opacity-100" id="chat-icon-open" data-icon="chat">chat</span>
+        <span class="material-symbols-outlined absolute transition-opacity duration-300 opacity-0" id="chat-icon-close" data-icon="close">close</span>
+    </button>
+</div>
+<script type="module">
+import OpenAI from "https://esm.sh/openai";
+
+const openai = new OpenAI({
+  baseURL: "https://9router.vuhai.io.vn/v1",
+  apiKey: "sk-4bd27113b7dc78d1-lh6jld-f4f9c69f",
+  dangerouslyAllowBrowser: true
+});
+
+const toggleBtn = document.getElementById("chatbot-toggle-btn");
+const chatWindow = document.getElementById("chat-window");
+const closeBtn = document.getElementById("close-chat-btn");
+const sendBtn = document.getElementById("send-btn");
+const chatInput = document.getElementById("chat-input");
+const chatMessages = document.getElementById("chat-messages");
+const iconOpen = document.getElementById("chat-icon-open");
+const iconClose = document.getElementById("chat-icon-close");
+
+let isChatOpen = false;
+
+let conversationHistory = [
+    { role: "system", content: "Bạn là một trợ lý AI thông minh tại nhà hàng Hương Vị Việt Nam. Hãy giúp tôi trả lời lịch sự và thân thiện nhất." }
+];
+
+const toggleChat = () => {
+    isChatOpen = !isChatOpen;
+    if (isChatOpen) {
+        chatWindow.classList.remove("hidden");
+        chatWindow.classList.add("flex");
+        iconOpen.classList.replace("opacity-100", "opacity-0");
+        iconClose.classList.replace("opacity-0", "opacity-100");
+    } else {
+        chatWindow.classList.add("hidden");
+        chatWindow.classList.remove("flex");
+        iconOpen.classList.replace("opacity-0", "opacity-100");
+        iconClose.classList.replace("opacity-100", "opacity-0");
+    }
+};
+
+if (toggleBtn) toggleBtn.addEventListener("click", toggleChat);
+if (closeBtn) closeBtn.addEventListener("click", toggleChat);
+
+const sendMessage = async () => {
+    const message = chatInput.value.trim();
+    if (!message) return;
+    chatInput.value = "";
+    appendMessage("user", message);
+    conversationHistory.push({ role: "user", content: message });
+    const typingIndicator = appendMessage("assistant", "Đang phản hồi...", true);
+
+    try {
+        const response = await openai.chat.completions.create({
+          model: "ces-chatbot-gpt-5.4",
+          messages: conversationHistory,
+          temperature: 0.7,
+        });
+        const botMessage = response.choices[0].message.content;
+        typingIndicator.remove();
+        appendMessage("assistant", botMessage);
+        conversationHistory.push({ role: "assistant", content: botMessage });
+    } catch (error) {
+        console.error("Error:", error);
+        typingIndicator.remove();
+        appendMessage("assistant", "Lỗi mạng hoặc API Key. Chi tiết: " + error.message);
+    }
+};
+
+if (sendBtn) sendBtn.addEventListener("click", sendMessage);
+if (chatInput) chatInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") sendMessage();
+});
+
+function appendMessage(role, text, isTyping = false) {
+    const msgWrapper = document.createElement("div");
+    msgWrapper.className = `flex items-start gap-3 ${role === 'user' ? 'flex-row-reverse' : ''} ${isTyping ? 'opacity-50 animate-pulse' : ''}`;
+    const avatar = document.createElement("div");
+    avatar.className = `w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${role === 'user' ? 'bg-secondary text-white' : 'bg-primary text-white'}`;
+    avatar.innerHTML = `<span class="material-symbols-outlined text-sm">${role === 'user' ? 'person' : 'smart_toy'}</span>`;
+    const bubble = document.createElement("div");
+    bubble.className = `p-3 text-on-surface text-sm max-w-[80%] ${
+        role === 'user' 
+        ? 'bg-secondary-container !text-on-secondary-container rounded-2xl rounded-tr-sm' 
+        : 'bg-surface-container rounded-2xl rounded-tl-sm'
+    }`;
+    bubble.innerHTML = text.replace(/\n/g, '<br>');
+    msgWrapper.appendChild(avatar);
+    msgWrapper.appendChild(bubble);
+    chatMessages.appendChild(msgWrapper);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    return msgWrapper;
+}
+</script>
+</body>
+</html>

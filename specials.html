@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Món Đặc Biệt - Hương Vị Việt Nam</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary-container": "#ffa286", "secondary-fixed-dim": "#f6be39", "inverse-on-surface": "#f7f0e8", "surface-variant": "#e8e1da", "surface-tint": "#a73914", "outline": "#8b716a", "background": "#fff8f1", "tertiary": "#063c0e", "on-secondary-container": "#715300", "surface-container-high": "#eee7df", "on-tertiary-fixed": "#002204", "on-background": "#1e1b17", "surface-container-low": "#f9f3eb", "surface-dim": "#dfd9d1", "error": "#ba1a1a", "on-error-container": "#93000a", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "secondary-fixed": "#ffdfa0", "on-tertiary": "#ffffff", "inverse-surface": "#33302b", "on-secondary-fixed": "#261a00", "tertiary-fixed": "#b8f1b0", "surface-container-highest": "#e8e1da", "secondary": "#795900", "error-container": "#ffdad6", "primary-container": "#8b2500", "on-primary": "#ffffff", "surface-container": "#f4ede5", "on-surface": "#1e1b17", "on-secondary": "#ffffff", "inverse-primary": "#ffb59f", "tertiary-container": "#225423", "primary-fixed-dim": "#ffb59f", "outline-variant": "#dfc0b7", "on-surface-variant": "#58423b", "secondary-container": "#ffc641", "primary": "#641800", "on-secondary-fixed-variant": "#5c4300", "on-primary-fixed-variant": "#852300", "tertiary-fixed-dim": "#9dd496", "surface": "#fff8f1", "primary-fixed": "#ffdbd1", "on-tertiary-fixed-variant": "#1f5121", "on-tertiary-container": "#90c78a", "on-primary-fixed": "#3a0a00", "surface-bright": "#fff8f1" }, fontFamily: { "headline": ["Noto Serif"], "body": ["Manrope"], "label": ["Manrope"] }, borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.5rem", "full": "9999px"} } } }
+</script>
+<style>
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+body { background-color: #fff8f1; color: #1e1b17; font-family: 'Manrope', sans-serif; }
+h1, h2, h3, .serif { font-family: 'Noto Serif', serif; }
+</style>
+</head>
+<body class="bg-surface selection:bg-primary-fixed selection:text-primary flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav bg-orange-50/80 dark:bg-stone-900/80 shadow-sm dark:shadow-none">
+    <div class="flex justify-between items-center px-8 py-4 w-full max-w-screen-2xl mx-auto">
+        <a class="font-serif italic text-2xl text-orange-900 dark:text-orange-100 tracking-tight" href="index.html">Hương Vị Việt Nam</a>
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="text-stone-500 hover:text-orange-800 font-serif text-lg tracking-tight transition-colors" href="index.html">Trang Chủ</a>
+            <a class="text-stone-500 hover:text-orange-800 font-serif text-lg tracking-tight transition-colors" href="menu.html">Thực Đơn</a>
+            <a class="text-orange-800 dark:text-orange-400 font-bold border-b-2 border-orange-800 font-serif text-lg tracking-tight" href="specials.html">Món Đặc Biệt</a>
+            <a class="text-stone-500 hover:text-orange-800 font-serif text-lg tracking-tight transition-colors" href="about.html">Về Chúng Tôi</a>
+            <a class="text-stone-500 hover:text-orange-800 font-serif text-lg tracking-tight transition-colors" href="contact.html">Liên Hệ</a>
+        </div>
+        <div class="flex items-center gap-6 text-orange-900">
+            <button class="hover:bg-orange-100/50 p-2 rounded-full transition-colors"><span class="material-symbols-outlined">call</span></button>
+            <button class="hover:bg-orange-100/50 p-2 rounded-full transition-colors"><span class="material-symbols-outlined">search</span></button>
+            <a href="cart.html" class="hover:bg-orange-100/50 p-2 rounded-full transition-colors relative block">
+                <span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+                <span class="absolute top-0 right-0 bg-primary text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center">2</span>
+            </a>
+            <button class="hover:bg-orange-100/50 p-2 rounded-full transition-colors"><span class="material-symbols-outlined" data-icon="favorite">favorite</span></button>
+        </div>
+    </div>
+</nav>
+
+<main class="pt-32 pb-24 max-w-screen-2xl mx-auto px-8 flex-grow">
+    <header class="mb-16 text-center">
+        <h1 class="text-5xl md:text-6xl font-headline font-bold text-primary tracking-tight mb-4">Tinh Hoa Hội Tụ</h1>
+        <p class="text-on-surface-variant text-lg max-w-2xl mx-auto">
+            Trải nghiệm ẩm thực thăng hoa với những tuyệt tác "Bếp Trưởng Khuyên Dùng" – Nơi truyền thống giao thoa cùng sự sáng tạo nghệ thuật không giới hạn.
+        </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <!-- Special Item 1 -->
+        <article class="group relative bg-surface-container-lowest rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
+            <div class="aspect-[4/3] relative overflow-hidden bg-surface-container-low">
+                <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaUoHpkgb_lCiFt98FlURjoocLZ76WDzLVK2E68Yzs4g_OlIuSw8X1C84rfR-cdC8dcwMNWVEvFIfbTOuz0n93D2kL3JizYQON93bNhTZbPOeBQ0XEQ79LBarYr602fqtts8b_6vCl8l2W-V89hfhmS6gnPUfGdQagLB0mLP4N6WA4FPwAcWh1dJe_JhrdQOcl3g9KnIaB13HmfcI7X5n-wU_4Ncb1MXr-waby-TfSBkx7koid-zrLh3pmKVqe6mfrDQ7-Z3nmpjw" alt="Bò Wagyu Nướng Sả">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute top-4 left-4 flex gap-2">
+                    <span class="bg-secondary text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg backdrop-blur-md bg-opacity-90">Fusion Signature</span>
+                </div>
+                <div class="absolute bottom-6 left-6 right-6">
+                    <h3 class="text-3xl font-headline font-bold text-white mb-2 shadow-sm drop-shadow-md">Bò Wagyu Nướng Sả Ớt</h3>
+                    <div class="flex items-center gap-2 text-primary-fixed font-bold text-xl drop-shadow-md">1.250.000đ</div>
+                </div>
+            </div>
+            <div class="p-8">
+                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed line-clamp-3">Sự kết hợp hoàn hảo giữa thăn ngoại Bò Wagyu thượng hạng tan chảy trong miệng, quyện cùng hương thơm đậm đà của sả, ớt xiêm xanh và nước mắm nhỉ Phú Quốc.</p>
+                <a href="product.html" class="w-full block text-center py-4 bg-primary-container text-on-primary font-bold rounded-xl shadow-lg hover:brightness-110 hover:scale-[1.02] active:scale-95 transition-all">Đặt ngay món này</a>
+            </div>
+        </article>
+
+        <!-- Special Item 2 -->
+        <article class="group relative bg-surface-container-lowest rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
+            <div class="aspect-[4/3] relative overflow-hidden bg-surface-container-low">
+                <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvYY1llImhNGiCcpR4MQfibcIRzUxBVAODtaEAyBkk0hKLypuCPbIiCTOJ1wDV269nbvTTmlbbpy-RJIv-IysXWFtK_wpu_t_94N609hBXOobLTyR9MsJVqthY7zjcut4kSw8I5D9cc9Oh9S5TQa7QLtiBHs0ecr-Ve9ag3eK-d6r1Yb83TNg7jKxwQYgfVJnd9CpAZQOWzhBkYsZY8EAZG2CdmBUciRgNXRIzLgXex36RPhPl2ac-b-SEG9mKB9k5pj-d9TORkvI" alt="Lẩu Cua Đồng">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute top-4 left-4 flex gap-2">
+                    <span class="bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg backdrop-blur-md bg-opacity-90">Must Try</span>
+                </div>
+                <div class="absolute bottom-6 left-6 right-6">
+                    <h3 class="text-3xl font-headline font-bold text-white mb-2 shadow-sm drop-shadow-md">Lẩu Cua Đồng Hải Sản</h3>
+                    <div class="flex items-center gap-2 text-primary-fixed font-bold text-xl drop-shadow-md">680.000đ</div>
+                </div>
+            </div>
+            <div class="p-8">
+                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed line-clamp-3">Nước lẩu cua đồng giã tay thanh ngọt chuẩn vị Bắc, ăn kèm hải sản tươi sống cao cấp gồm Tôm Hùm baby, mực ống và rau hoa đồng nội.</p>
+                <a href="product.html" class="w-full block text-center py-4 border-2 border-primary-container text-primary-container font-bold rounded-xl hover:bg-primary-container hover:text-on-primary transition-all">Đặt ngay món này</a>
+            </div>
+        </article>
+
+        <!-- Special Item 3 -->
+        <article class="group relative bg-surface-container-lowest rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
+            <div class="aspect-[4/3] relative overflow-hidden bg-surface-container-low">
+                <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrst9A5ajKsDU_2qgWR-efPz5xL9GjCNL99_RD_ti9whFuXrEgkmaurRFcTfGPMTTmfobu91R1LEUTd7UZ_m78IsIstFXD8qk6bMSXyjJMHPN4jYIRQuPZ8rPl7AAjpdkB4kpbj1UnnVmvNEHc1vZ-pK1k9iwUbeF3iyYjZ5nm4yNbxNoKI62hZUO-JgjkjOPYv9-gPLuBFw4gFUm7TqgnKxCLbZFf_mm5viNWaWQ6vD31g-z91VNbY-wjoS7kLUBDqn5pVXsd-6M" alt="Gà Tre Hấp">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute top-4 left-4 flex gap-2">
+                    <span class="bg-tertiary text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg backdrop-blur-md bg-opacity-90">Healthy Choice</span>
+                </div>
+                <div class="absolute bottom-6 left-6 right-6">
+                    <h3 class="text-3xl font-headline font-bold text-white mb-2 shadow-sm drop-shadow-md">Gà Tre Hấp Lá Chanh</h3>
+                    <div class="flex items-center gap-2 text-primary-fixed font-bold text-xl drop-shadow-md">450.000đ</div>
+                </div>
+            </div>
+            <div class="p-8">
+                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed line-clamp-3">Gà tre tươi bản địa, thịt dai ngọt tự nhiên được hấp chín vừa tới cùng lá chanh nồng nàn. Dùng kèm muối tiêu chanh chuẩn vị gia truyền.</p>
+                <a href="product.html" class="w-full block text-center py-4 border-2 border-primary-container text-primary-container font-bold rounded-xl hover:bg-primary-container hover:text-on-primary transition-all">Đặt ngay món này</a>
+            </div>
+        </article>
+    </div>
+</main>
+
+<footer class="w-full mt-auto bg-stone-100 dark:bg-stone-950">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-7xl mx-auto border-t border-orange-200/20">
+        <div class="col-span-1 md:col-span-1">
+            <span class="font-serif text-3xl mb-6 block text-orange-950 dark:text-orange-50 italic">Hương Vị Việt Nam</span>
+            <p class="font-serif text-base font-light text-stone-500 mb-8">Nơi hội tụ tinh hoa ẩm thực truyền thống Việt Nam với phong cách phục vụ hiện đại và chuyên nghiệp.</p>
+        </div>
+        <div>
+            <h4 class="font-headline font-bold text-orange-900 mb-6 uppercase tracking-widest text-sm">Khám Phá</h4>
+            <ul class="space-y-4">
+                <li><a class="text-stone-500 hover:text-orange-800 transition-colors font-serif text-base font-light" href="about.html">Về chúng tôi</a></li>
+                <li><a class="text-orange-800 underline font-serif text-base font-light" href="specials.html">Thực đơn đặc sắc</a></li>
+                <li><a class="text-stone-500 hover:text-orange-800 transition-colors font-serif text-base font-light" href="menu.html">Tin tức ẩm thực</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-headline font-bold text-orange-900 mb-6 uppercase tracking-widest text-sm">Hỗ Trợ</h4>
+            <ul class="space-y-4">
+                <li><a class="text-stone-500 hover:text-orange-800 transition-colors font-serif text-base font-light" href="#">Chính sách bảo mật</a></li>
+                <li><a class="text-stone-500 hover:text-orange-800 transition-colors font-serif text-base font-light" href="#">Điều khoản sử dụng</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-headline font-bold text-orange-900 mb-6 uppercase tracking-widest text-sm">Liên Hệ</h4>
+            <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-orange-800 mt-1">location_on</span>
+                    <span class="text-stone-500 font-serif text-base font-light">123 Đường Lê Lợi, Quận 1, TP.HCM</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- Chatbot UI -->
+<div id="chatbot-container" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <!-- Chat Window -->
+    <div id="chat-window" class="hidden w-80 sm:w-96 bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant overflow-hidden mb-4 flex flex-col transition-all duration-300">
+        <div class="bg-primary text-white p-4 flex justify-between items-center px-5">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+                <span class="font-headline font-bold">Trợ Lý AI Hương Vị Việt</span>
+            </div>
+            <button id="close-chat-btn" class="text-white/80 hover:text-white transition-colors">
+                <span class="material-symbols-outlined" data-icon="close">close</span>
+            </button>
+        </div>
+        <div id="chat-messages" class="h-80 p-5 flex flex-col gap-4 overflow-y-auto bg-surface font-body text-sm relative">
+            <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-white text-sm" data-icon="smart_toy">smart_toy</span>
+                </div>
+                <div class="bg-surface-container p-3 rounded-2xl rounded-tl-sm text-on-surface w-[80%]">
+                    Xin chào! Tôi là trợ lý AI của Hương Vị Việt Nam. Hôm nay bạn muốn dùng món gì ạ?
+                </div>
+            </div>
+        </div>
+        <div class="p-4 bg-surface-container-low border-t border-outline-variant flex gap-2 items-center">
+            <input id="chat-input" type="text" class="flex-1 bg-surface-container-highest px-4 py-2.5 rounded-full border border-outline-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-sm font-body text-on-surface placeholder:text-on-surface-variant/50" placeholder="Nhập tin nhắn...">
+            <button id="send-btn" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-container transition-colors shrink-0">
+                <span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+            </button>
+        </div>
+    </div>
+    <button id="chatbot-toggle-btn" class="w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-105 transition-transform duration-300 relative group">
+        <span class="material-symbols-outlined absolute transition-opacity duration-300 opacity-100" id="chat-icon-open" data-icon="chat">chat</span>
+        <span class="material-symbols-outlined absolute transition-opacity duration-300 opacity-0" id="chat-icon-close" data-icon="close">close</span>
+    </button>
+</div>
+<script type="module">
+import OpenAI from "https://esm.sh/openai";
+
+const openai = new OpenAI({
+  baseURL: "https://9router.vuhai.io.vn/v1",
+  apiKey: "sk-4bd27113b7dc78d1-lh6jld-f4f9c69f",
+  dangerouslyAllowBrowser: true
+});
+
+const toggleBtn = document.getElementById("chatbot-toggle-btn");
+const chatWindow = document.getElementById("chat-window");
+const closeBtn = document.getElementById("close-chat-btn");
+const sendBtn = document.getElementById("send-btn");
+const chatInput = document.getElementById("chat-input");
+const chatMessages = document.getElementById("chat-messages");
+const iconOpen = document.getElementById("chat-icon-open");
+const iconClose = document.getElementById("chat-icon-close");
+
+let isChatOpen = false;
+
+let conversationHistory = [
+    { role: "system", content: "Bạn là một trợ lý AI thông minh tại nhà hàng Hương Vị Việt Nam. Hãy tư vấn món ăn, giới thiệu thực đơn một cách lịch sự, thân thiện và nhiệt tình." }
+];
+
+const toggleChat = () => {
+    isChatOpen = !isChatOpen;
+    if (isChatOpen) {
+        chatWindow.classList.remove("hidden");
+        chatWindow.classList.add("flex");
+        iconOpen.classList.replace("opacity-100", "opacity-0");
+        iconClose.classList.replace("opacity-0", "opacity-100");
+    } else {
+        chatWindow.classList.add("hidden");
+        chatWindow.classList.remove("flex");
+        iconOpen.classList.replace("opacity-0", "opacity-100");
+        iconClose.classList.replace("opacity-100", "opacity-0");
+    }
+};
+
+if (toggleBtn) toggleBtn.addEventListener("click", toggleChat);
+if (closeBtn) closeBtn.addEventListener("click", toggleChat);
+
+const sendMessage = async () => {
+    const message = chatInput.value.trim();
+    if (!message) return;
+    chatInput.value = "";
+    appendMessage("user", message);
+    conversationHistory.push({ role: "user", content: message });
+    const typingIndicator = appendMessage("assistant", "Đang phản hồi...", true);
+
+    try {
+        const response = await openai.chat.completions.create({
+          model: "ces-chatbot-gpt-5.4",
+          messages: conversationHistory,
+          temperature: 0.7,
+        });
+        const botMessage = response.choices[0].message.content;
+        typingIndicator.remove();
+        appendMessage("assistant", botMessage);
+        conversationHistory.push({ role: "assistant", content: botMessage });
+    } catch (error) {
+        console.error("Error:", error);
+        typingIndicator.remove();
+        appendMessage("assistant", "Lỗi mạng hoặc API Key. Chi tiết: " + error.message);
+    }
+};
+
+if (sendBtn) sendBtn.addEventListener("click", sendMessage);
+if (chatInput) chatInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") sendMessage();
+});
+
+function appendMessage(role, text, isTyping = false) {
+    const msgWrapper = document.createElement("div");
+    msgWrapper.className = `flex items-start gap-3 ${role === 'user' ? 'flex-row-reverse' : ''} ${isTyping ? 'opacity-50 animate-pulse' : ''}`;
+    const avatar = document.createElement("div");
+    avatar.className = `w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${role === 'user' ? 'bg-secondary text-white' : 'bg-primary text-white'}`;
+    avatar.innerHTML = `<span class="material-symbols-outlined text-sm">${role === 'user' ? 'person' : 'smart_toy'}</span>`;
+    const bubble = document.createElement("div");
+    bubble.className = `p-3 text-on-surface text-sm max-w-[80%] ${
+        role === 'user' 
+        ? 'bg-secondary-container !text-on-secondary-container rounded-2xl rounded-tr-sm' 
+        : 'bg-surface-container rounded-2xl rounded-tl-sm'
+    }`;
+    bubble.innerHTML = text.replace(/\n/g, '<br>');
+    msgWrapper.appendChild(avatar);
+    msgWrapper.appendChild(bubble);
+    chatMessages.appendChild(msgWrapper);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    return msgWrapper;
+}
+</script>
+</body>
+</html>
