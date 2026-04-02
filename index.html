@@ -574,4 +574,173 @@
 </div>
 </div>
 </footer>
+
+<!-- Chatbot UI -->
+<div id="chatbot-container" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <!-- Chat Window -->
+    <div id="chat-window" class="hidden w-80 sm:w-96 bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant overflow-hidden mb-4 flex flex-col transition-all duration-300">
+        <!-- Header -->
+        <div class="bg-primary text-white p-4 flex justify-between items-center px-5">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+                <span class="font-headline font-bold">Trợ Lý AI Hương Vị Việt</span>
+            </div>
+            <button id="close-chat-btn" class="text-white/80 hover:text-white transition-colors">
+                <span class="material-symbols-outlined" data-icon="close">close</span>
+            </button>
+        </div>
+        <!-- Body -->
+        <div id="chat-messages" class="h-80 p-5 flex flex-col gap-4 overflow-y-auto bg-surface font-body text-sm relative">
+            <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-white text-sm" data-icon="smart_toy">smart_toy</span>
+                </div>
+                <div class="bg-surface-container p-3 rounded-2xl rounded-tl-sm text-on-surface w-[80%]">
+                    Xin chào! Tôi là trợ lý AI của Hương Vị Việt Nam. Hôm nay bạn muốn dùng món gì ạ?
+                </div>
+            </div>
+        </div>
+        <!-- Input -->
+        <div class="p-4 bg-surface-container-low border-t border-outline-variant flex gap-2 items-center">
+            <input id="chat-input" type="text" class="flex-1 bg-surface-container-highest px-4 py-2.5 rounded-full border border-outline-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-sm font-body text-on-surface placeholder:text-on-surface-variant/50" placeholder="Nhập tin nhắn...">
+            <button id="send-btn" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-container transition-colors shrink-0">
+                <span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Toggle Button -->
+    <button id="chatbot-toggle-btn" class="w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-105 transition-transform duration-300 relative group">
+        <span class="material-symbols-outlined absolute transition-opacity duration-300 opacity-100" id="chat-icon-open" data-icon="chat">chat</span>
+        <span class="material-symbols-outlined absolute transition-opacity duration-300 opacity-0" id="chat-icon-close" data-icon="close">close</span>
+    </button>
+</div>
+<script type="module">
+import OpenAI from "https://esm.sh/openai";
+
+// Khởi tạo client OpenAI với thông tin bạn cung cấp
+const openai = new OpenAI({
+  baseURL: "https://9router.vuhai.io.vn/v1",
+  apiKey: "sk-4bd27113b7dc78d1-lh6jld-f4f9c69f",
+  dangerouslyAllowBrowser: true // Cho phép chạy trên Frontend
+});
+
+const toggleBtn = document.getElementById("chatbot-toggle-btn");
+const chatWindow = document.getElementById("chat-window");
+const closeBtn = document.getElementById("close-chat-btn");
+const sendBtn = document.getElementById("send-btn");
+const chatInput = document.getElementById("chat-input");
+const chatMessages = document.getElementById("chat-messages");
+const iconOpen = document.getElementById("chat-icon-open");
+const iconClose = document.getElementById("chat-icon-close");
+
+let isChatOpen = false;
+
+// Lịch sử hội thoại để gửi cho LLM (có giữ ngữ cảnh hệ thống)
+let conversationHistory = [
+    { 
+        role: "system", 
+        content: "Bạn là một trợ lý AI thông minh tại nhà hàng Hương Vị Việt Nam. Hãy tư vấn món ăn, giới thiệu thực đơn một cách lịch sự, thân thiện và nhiệt tình." 
+    }
+];
+
+// Toggle Chat Window
+const toggleChat = () => {
+    isChatOpen = !isChatOpen;
+    if (isChatOpen) {
+        chatWindow.classList.remove("hidden");
+        chatWindow.classList.add("flex");
+        iconOpen.classList.replace("opacity-100", "opacity-0");
+        iconClose.classList.replace("opacity-0", "opacity-100");
+    } else {
+        chatWindow.classList.add("hidden");
+        chatWindow.classList.remove("flex");
+        iconOpen.classList.replace("opacity-0", "opacity-100");
+        iconClose.classList.replace("opacity-100", "opacity-0");
+    }
+};
+
+if (toggleBtn) toggleBtn.addEventListener("click", toggleChat);
+if (closeBtn) closeBtn.addEventListener("click", toggleChat);
+
+// Xử lý gửi tin nhắn
+const sendMessage = async () => {
+    const message = chatInput.value.trim();
+    if (!message) return;
+
+    // Xóa nội dung input
+    chatInput.value = "";
+
+    // Hiển thị tin nhắn người dùng
+    appendMessage("user", message);
+
+    // Lưu vào lịch sử hội thoại
+    conversationHistory.push({ role: "user", content: message });
+
+    // Hiển thị trạng thái đang nhập chữ
+    const typingIndicator = appendMessage("assistant", "Đang phản hồi...", true);
+
+    try {
+        // Gửi API call tới LLM qua OpenAI SDK
+        const response = await openai.chat.completions.create({
+          model: "ces-chatbot-gpt-5.4",
+          messages: conversationHistory,
+          temperature: 0.7,
+        });
+
+        const botMessage = response.choices[0].message.content;
+        
+        // Xóa chữ "Đang phản hồi..." và thay bằng chữ thật
+        typingIndicator.remove();
+        appendMessage("assistant", botMessage);
+
+        // Cập nhật lại lịch sử hội thoại
+        conversationHistory.push({ role: "assistant", content: botMessage });
+
+    } catch (error) {
+        console.error("Lỗi khi kết nối Chatbot:", error);
+        typingIndicator.remove();
+        appendMessage("assistant", "Xin lỗi, đã xảy ra lỗi khi kết nối với hệ thống. Vui lòng thử lại sau! " + error.message);
+    }
+};
+
+if (sendBtn) sendBtn.addEventListener("click", sendMessage);
+if (chatInput) chatInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") sendMessage();
+});
+
+/**
+ * Hàm in tin nhắn ra giao diện
+ * @param {string} role - 'user' | 'assistant'
+ * @param {string} text - Nội dung tin nhắn
+ * @param {boolean} isTyping - Đang phản hồi mờ đi
+ */
+function appendMessage(role, text, isTyping = false) {
+    const msgWrapper = document.createElement("div");
+    msgWrapper.className = `flex items-start gap-3 ${role === 'user' ? 'flex-row-reverse' : ''} ${isTyping ? 'opacity-50 animate-pulse' : ''}`;
+
+    const avatar = document.createElement("div");
+    avatar.className = `w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${role === 'user' ? 'bg-secondary text-white' : 'bg-primary text-white'}`;
+    avatar.innerHTML = `<span class="material-symbols-outlined text-sm">${role === 'user' ? 'person' : 'smart_toy'}</span>`;
+
+    const bubble = document.createElement("div");
+    bubble.className = `p-3 text-on-surface text-sm max-w-[80%] ${
+        role === 'user' 
+        ? 'bg-secondary-container !text-on-secondary-container rounded-2xl rounded-tr-sm' 
+        : 'bg-surface-container rounded-2xl rounded-tl-sm'
+    }`;
+    // Gắn line breaks vào bubble nếu có
+    bubble.innerHTML = text.replace(/\n/g, '<br>');
+
+    msgWrapper.appendChild(avatar);
+    msgWrapper.appendChild(bubble);
+
+    chatMessages.appendChild(msgWrapper);
+
+    // Cuộn xuống dòng cuối cùng
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    return msgWrapper;
+}
+</script>
 </body></html>
