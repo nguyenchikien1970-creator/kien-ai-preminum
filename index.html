@@ -636,11 +636,87 @@ const iconClose = document.getElementById("chat-icon-close");
 
 let isChatOpen = false;
 
+// ============================================================
+// HÀM BÓC TÁCH DỮ LIỆU LEAD TỪ CÂU TRẢ LỜI CỦA AI VÀ LƯU TRỮ
+// ============================================================
+
+// URL của Google Apps Script Web App (sẽ lấy ở Bước 3)
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyVF5UA3XqaaPb8G3im0LDbOW5WdFQZybBYSw5Dun6iYAocRb8kl86F4Vdb7XFwzbh4/exec';
+
+// Tạo Session ID duy nhất cho mỗi phiên tải trang
+const AI_CHAT_SESSION_ID = 'session_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7);
+
+/**
+ * Hàm xử lý response từ AI:
+ * 1. Kiểm tra có tag ||LEAD_DATA:...|| không
+ * 2. Nếu có → Parse JSON → Gửi lên Google Sheets kèm theo Lịch sử Chat & Session ID
+ * 3. Xóa tag khỏi câu trả lời → Hiển thị sạch cho khách
+ */
+function processAIResponse(aiResponse, chatHistoryArray = []) {
+    const dataPattern = /\|\|LEAD_DATA:\s*(\{.*?\})\s*\|\|/;
+
+    // Xây dựng lại Text Lịch sử Chat cho dễ đọc trên Google Sheets
+    let formattedHistory = "";
+    if (chatHistoryArray && chatHistoryArray.length > 0) {
+        formattedHistory = chatHistoryArray.map(msg => {
+            let role = msg.role === 'user' ? 'Khách' : (msg.role === 'system' ? 'Hệ thống' : 'AI');
+            if (role === 'Hệ thống') return ''; // Bỏ qua system prompt
+            let content = msg.content.replace(dataPattern, "").trim();
+            return `${role}: ${content}`;
+        }).filter(Boolean).join('\n\n');
+    }
+
+    if (aiResponse.includes("||LEAD_DATA:")) {
+        const match = aiResponse.match(dataPattern);
+
+        if (match && match[1]) {
+            try {
+                const leadData = JSON.parse(match[1]);
+                console.log("✅ Dữ liệu khách hàng bóc được:", leadData);
+
+                // Gửi dữ liệu đồng bộ
+                if (leadData.name || leadData.phone || leadData.email) {
+                    sendLeadToGoogleSheets(leadData, formattedHistory);
+                }
+            } catch (error) {
+                console.error("❌ Lỗi parse JSON từ AI:", error);
+            }
+        }
+        aiResponse = aiResponse.replace(dataPattern, "").trim();
+    }
+    return aiResponse;
+}
+
+/**
+ * Hàm gửi dữ liệu Lead lên Google Apps Script → Google Sheets
+ */
+async function sendLeadToGoogleSheets(leadData, chatHistoryText) {
+    try {
+        await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name: leadData.name || '',
+                phone: leadData.phone || '',
+                email: leadData.email || '',
+                source: window.location.href,
+                sessionId: AI_CHAT_SESSION_ID,  // Mã phiên kết nối
+                chatHistory: chatHistoryText,   // Bơm toàn bộ lịch sử 
+                timestamp: new Date().toLocaleString('vi-VN')
+            })
+        });
+        console.log("📤 Đã đồng bộ dữ liệu vào Google Sheets!");
+    } catch (err) {
+        console.warn("⚠️ Không gửi được dữ liệu lead:", err);
+    }
+}
+
 // Lịch sử hội thoại để gửi cho LLM (có giữ ngữ cảnh hệ thống)
 let conversationHistory = [
     { 
         role: "system", 
-        content: "Bạn là một trợ lý AI thông minh tại nhà hàng Hương Vị Việt Nam. Hãy tư vấn món ăn, giới thiệu thực đơn một cách lịch sự, thân thiện và nhiệt tình." 
+        content: "Bạn là một trợ lý AI thông minh tại nhà hàng Hương Vị Việt Nam. Hãy tư vấn món ăn, giới thiệu thực đơn một cách lịch sự, thân thiện và nhiệt tình.\n\nQUAN TRỌNG: Khi khách hàng cung cấp Tên, Số điện thoại (hoặc Email) để chốt đơn, bắt buộc bạn phải thu thập các thông tin đó và chèn chuỗi sau vào cuối câu trả lời của bạn, không được thay đổi cấu trúc tag ||LEAD_DATA:...||:\n||LEAD_DATA: {\"name\": \"tên khách\", \"phone\": \"số đt\", \"email\": \"email nếu có\"} ||" 
     }
 ];
 
@@ -688,7 +764,10 @@ const sendMessage = async () => {
           temperature: 0.7,
         });
 
-        const botMessage = response.choices[0].message.content;
+        let botMessage = response.choices[0].message.content;
+        
+        // Bóc tách dữ liệu và đồng bộ Sheets
+        botMessage = processAIResponse(botMessage, conversationHistory);
         
         // Xóa chữ "Đang phản hồi..." và thay bằng chữ thật
         typingIndicator.remove();
